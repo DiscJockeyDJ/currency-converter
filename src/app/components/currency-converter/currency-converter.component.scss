@@ -1,0 +1,31 @@
+.title,
+.subtitle {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: 1024px) {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+    }
+}
+
+.converter-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center; // Center horizontally.
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
+
+    .converted-amount {
+        background-color: white;
+        color: inherit;
+        cursor: not-allowed;
+    }
+}

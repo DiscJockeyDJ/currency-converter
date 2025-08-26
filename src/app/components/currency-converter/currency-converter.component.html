@@ -1,0 +1,43 @@
+<h1 class="title" i18n> Welcome to Currency Converter</h1>
+<div [formGroup]="form" class="converter-container">
+    <!-- First field -->
+    <mat-form-field appearance="outline">
+        <mat-label i18n>Amount</mat-label>
+        <input matInput type="number" formControlName="amount" placeholder="Amount" title="Amount to convert from" />
+    </mat-form-field>
+
+    <!-- From currency dropdown -->
+    <mat-form-field appearance="outline">
+        <mat-label>From</mat-label>
+        <input type="text" matInput [matAutocomplete]="fromAuto" formControlName="fromCurrency" />
+        <mat-autocomplete #fromAuto="matAutocomplete"
+            (optionSelected)="onCurrencySelected('fromCurrency', $event.option.value)">
+            <mat-option *ngFor="let currency of filteredFrom | async" [value]="currency.short_code">
+                {{ currency.name }} {{ currency.symbol }}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <!-- Swap button -->
+    <button mat-icon-button (click)="swapCurrencies()" aria-label="Swap currencies">
+        <mat-icon>swap_horiz</mat-icon>
+    </button>
+
+    <!-- Converted amount -->
+    <mat-form-field appearance="outline">
+        <mat-label i18n>Converted amount</mat-label>
+        <input matInput [value]="convertedAmount || ''" class="converted-amount" readonly />
+    </mat-form-field>
+
+    <!-- To currency dropdown -->
+    <mat-form-field appearance="outline">
+        <mat-label i18n>To</mat-label>
+        <input type="text" matInput [matAutocomplete]="toAuto" formControlName="toCurrency" />
+        <mat-autocomplete #toAuto="matAutocomplete"
+            (optionSelected)="onCurrencySelected('toCurrency', $event.option.value)">
+            <mat-option *ngFor="let currency of filteredTo | async" [value]="currency.short_code">
+                {{ currency.name }} {{ currency.symbol }}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</div>

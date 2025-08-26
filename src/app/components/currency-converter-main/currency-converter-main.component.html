@@ -1,0 +1,10 @@
+<div *ngIf="!loading && !loadError">
+    <app-currency-converter [currencies]="currencies" [convertedAmount]="convertedAmount"
+        (convert)="onConvert($event)"></app-currency-converter>
+</div>
+<div *ngIf="loading" class="center-spinner">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="loadError" class="center-error">
+    <p class="error" i18n>Currencies cannot be loaded</p>
+</div>

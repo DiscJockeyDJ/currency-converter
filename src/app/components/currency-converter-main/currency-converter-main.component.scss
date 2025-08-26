@@ -1,0 +1,14 @@
+.center-spinner {
+    align-items: center; // Center vertically.
+    display: flex;
+    height: 100vh; // Ensure the container takes the full viewport height.
+    justify-content: center; // Center horizontally.
+    width: 100vw;
+}
+
+.center-error {
+    text-align: center;
+    color: red;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
