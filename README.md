@@ -1,27 +1,43 @@
 # CurrencyConverter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+A simple web application to convert amounts between different currencies using real-time exchange rates. Built with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6 and Material Design for a responsive UI.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Convert amounts between multiple currencies
+- Real-time exchange rates
+- Error handling for network or API issues
+- Responsive design for desktop and mobile
 
-## Code scaffolding
+## Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project can be run locally. See the Installation section below.
 
-## Build
+## Installation / Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
+- Node.js >= 18
+- Angular CLI
 
-## Running unit tests
+### Installation / Setup
+1. Clone the repository
+```bash
+git clone https://github.com/DiscJockeyDJ/currency-converter.git
+```
+2. Navigate to the project directory
+3. Install dependencies `npm install`
+4. Run the application through `npm run start` or `ng serve`
+5. Open your browser at `http://localhost:4200/currency-converter`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Usage
+1. Enter an amount in the "Amount" field
+2. Select source and target currencies
+3. Click "Convert" to see the converted value.
+4. To quickly swap the source and target currencies, click the **Swap** icon.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Libraries used
+- Angular Material ^18.2.14
+- TypeScript ~5.4.2
+- RxJS ~7.8.0
+- REST API for currency rates from `https://api.currencybeacon.com/v1`
+- Angular i18n with `@angular/localize` for multi-language support.
